@@ -1,3 +1,3 @@
 export const Button = () => {
-    return <button>Hello World</button>
+    return <button className="p-2 border border-slate-900">Hello World</button>
 };
