@@ -5,29 +5,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap');
 
 :root {
-    --shadow: 0.15em 0.2em;
-    --primary: rgb(15 23 42);
-    --secondary: rgb(255 255 255);
+  --shadow: 0.15em 0.2em;
+  --primary: rgb(15 23 42);
+  --secondary: rgb(255 255 255);
 }
 
-
-body{
-    font-family: 'Fragment Mono', monospace;
-    font-size: 1.5rem;
-    margin: 0;
-    padding: 0;
-    color: var(--primary);
+body {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: var(--primary);
 }
 
-.shadow{
-    box-shadow: var(--shadow);
-    transition: 0.2s;
+.shadow {
+  box-shadow: var(--shadow);
+  transition: 0.2s;
 }
 
-.shadow:hover, .shadow:focus{
-    translate: var(--shadow);
-    box-shadow: none;
+.shadow:hover,
+.shadow:focus {
+  translate: var(--shadow);
+  box-shadow: none;
 }
-
-
-
