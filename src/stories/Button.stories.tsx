@@ -9,6 +9,10 @@ export default {
 
 // File: src/stories/Button.stories.tsx
 
-const Template: Story = (args) => <Button {...args}>Clicky</Button>;
+const Template: Story = (args) => (
+  <Button disabled={false} {...args}>
+    Clicky
+  </Button>
+);
 
 export const Default = Template.bind({});

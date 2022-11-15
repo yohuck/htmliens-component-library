@@ -29,3 +29,13 @@ body {
   translate: var(--shadow);
   box-shadow: none;
 }
+
+.shadow:disabled:hover,
+.shadow:disabled:focus {
+  translate: 0;
+  box-shadow: var(--shadow) gray;
+  outline: none;
+  background: darkgray;
+  color: gray;
+  text-outline: red 2px solid;
+}
