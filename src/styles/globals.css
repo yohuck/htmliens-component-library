@@ -39,3 +39,15 @@ body {
   color: gray;
   text-outline: red 2px solid;
 }
+
+.texty-sm{
+  font-size: 1rem;
+}
+
+.texty-lg{
+  font-size: 1.5rem;
+}
+
+.texty-2xl{
+  font-size: 2rem;
+}
