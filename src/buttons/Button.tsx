@@ -1,15 +1,25 @@
 import React from 'react';
 
+type Size = 'small' | 'medium' | 'large' | undefined;
+type Variant = 'primary' | 'secondary' | 'danger' | undefined;
+
+export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
+  children?: React.ReactNode;
+  variant?: Variant;
+  size?: Size;
+  isFullWidth?: boolean;
+}
+
 const themeSwitch = (variant: Variant): string => {
   switch (variant) {
     case 'primary':
-      return 'bg-blue-300 text-neutral-900';
+      return 'bg-gradient-to-r from-cyan-500 to-blue-400 text-black text-outline hover:outline-cyan-400 focus:outline-cyan-400 active:outline-cyan-400 border-slate-900';
       break;
     case 'secondary':
-      return 'bg-yellow-500';
+      return 'bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-900 hover:outline-amber-400 focus:outline-amber-400 active:outline-amber-400 border-slate-900';
       break;
     case 'danger':
-      return 'bg-red-600 text-slate-800';
+      return 'bg-gradient-to-r from-red-500 to-rose-500 text-slate-900 hover:outline-red-400 focus:outline-red-400 active:outline-red-400 border-slate-900';
       break;
     default:
       return '';
@@ -20,29 +30,19 @@ const themeSwitch = (variant: Variant): string => {
 const sizeSwitch = (size: Size): string => {
   switch (size) {
     case 'small':
-      return 'text-sm';
+      return 'text-sm rounded-md px-2';
       break;
     case 'medium':
-      return 'text-lg';
+      return 'text-lg rounded-lg px-4 ';
       break;
     case 'large':
-      return 'text-2xl';
+      return 'text-2xl rounded-lg px-6 py-1';
       break;
     default:
       return '';
       break;
   }
 };
-
-type Size = 'small' | 'medium' | 'large' | undefined;
-type Variant = 'primary' | 'secondary' | 'danger' | undefined;
-
-export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
-  children: React.ReactNode;
-  variant?: Variant;
-  size: Size;
-  isFullWidth?: boolean;
-}
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, variant, size, isFullWidth, ...props }, ref) => {
@@ -51,7 +51,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type="button"
         {...props}
-        className={`shadow px-2 py-1 border hover:outline hover:outine-4 hover:outline-yellow-400 focus:outline focus:outline-4 focus:outline-yellow-400 active:outline active:outline-4 active:outline-offset-2 active:outline-orange-600 border-slate-900 rounded-md ${themeSwitch(
+        className={`shadow border-2 hover:outline hover:outine-4  focus:outline focus:outline-4  active:outline active:outline-4 active:outline-offset-2  ${themeSwitch(
           variant
         )} ${sizeSwitch(size)} ${isFullWidth && 'w-full'}`}
       >

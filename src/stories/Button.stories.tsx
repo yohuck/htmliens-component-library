@@ -7,11 +7,9 @@ export default {
   component: Button,
 } as Meta;
 
-// File: src/stories/Button.stories.tsx
-
 const Template: Story = (args) => (
   <Button disabled={false} {...args}>
-    Clicky
+    Submit
   </Button>
 );
 

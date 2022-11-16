@@ -2,17 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Inter+Tight:ital,wght@0,400;0,700;0,900;1,200&family=Silkscreen:wght@400;700&display=swap');
 
 :root {
   --shadow: 0.15em 0.2em;
   --primary: rgb(15 23 42);
   --secondary: rgb(255 255 255);
-  --font-primary: 'Fragment Mono', monospace;
+  --font-primary: 'Inter Tight', monospace;
+  
 }
 
 body {
   font-family: var(--font-primary);
+  font-weight: bold;
   font-size: 1.5rem;
   margin: 0;
   padding: 0;
@@ -20,12 +22,13 @@ body {
 }
 
 .shadow {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow) black;
   transition: 0.2s;
 }
 
 .shadow:hover,
 .shadow:focus {
+  box-shadow: var(--shadow);
   translate: var(--shadow);
   box-shadow: none;
 }
@@ -40,14 +43,3 @@ body {
   text-outline: red 2px solid;
 }
 
-.texty-sm{
-  font-size: 1rem;
-}
-
-.texty-lg{
-  font-size: 1.5rem;
-}
-
-.texty-2xl{
-  font-size: 2rem;
-}
