@@ -22,7 +22,7 @@ body {
 }
 
 .shadow {
-  box-shadow: var(--shadow) black;
+  box-shadow: var(--shadow) rgb(15 23 42);
   transition: 0.2s;
 }
 

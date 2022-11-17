@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 type Size = 'small' | 'medium' | 'large' | undefined;
 type Variant = 'primary' | 'secondary' | 'danger' | undefined;
@@ -51,9 +52,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type="button"
         {...props}
-        className={`shadow border-2 hover:outline hover:outine-4  focus:outline focus:outline-4  active:outline active:outline-4 active:outline-offset-2  ${themeSwitch(
+        className={`shadow border-2 hover:outline hover:outine-4  focus:outline focus:outline-3  active:outline active:outline-4 active:outline-offset-2  ${themeSwitch(
           variant
-        )} ${sizeSwitch(size)} ${isFullWidth && 'w-full'}`}
+        )} ${sizeSwitch(size)} ${isFullWidth && 'w-full'}
+        `}
       >
         {children}
       </button>
@@ -68,3 +70,9 @@ Button.defaultProps = {
 };
 
 Button.displayName = 'Button';
+
+Button.propTypes = {
+  variant: PropTypes.oneOf(['primary', 'secondary', 'danger']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  isFullWidth: PropTypes.bool,
+};
