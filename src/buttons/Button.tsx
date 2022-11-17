@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 type Size = 'small' | 'medium' | 'large' | undefined;
-type Variant = 'primary' | 'secondary' | 'danger' | undefined;
+type Variant = 'primary' | 'secondary' | 'danger' | 'outline' | undefined;
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   children?: React.ReactNode;
@@ -21,6 +21,9 @@ const themeSwitch = (variant: Variant): string => {
       break;
     case 'danger':
       return 'bg-gradient-to-r from-red-500 to-rose-500 text-slate-900 hover:outline-red-400 focus:outline-red-400 active:outline-red-400 border-slate-900';
+      break;
+    case 'outline':
+      return 'dark:text-yellow-500 hover:outline-amber-400 focus:outline-amber-400 active:outline-amber-400 border-4 border-yellow-500';
       break;
     default:
       return '';

@@ -26,6 +26,11 @@ body {
   transition: 0.2s;
 }
 
+.help{
+  font-size: 10rem;
+}
+
+
 .shadow:hover,
 .shadow:focus {
   box-shadow: var(--shadow);
