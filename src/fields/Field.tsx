@@ -4,26 +4,24 @@ import { FieldContext } from './FieldContext';
 import { Label } from './Label';
 import { Input } from './Input';
 
-interface FieldProps {
-    children: React.ReactNode;
-}
-
 interface FieldComposition {
-    Label: typeof Label;
-    Input: typeof Input;
+  Label: typeof Label;
+  Input: typeof Input;
 }
 
-export interface FieldProps extends React.FC {
+export interface FieldProps extends React.ComponentPropsWithoutRef<'fieldset'> {
   children?: React.ReactNode;
 }
 
-export const Field: React.FC<FieldProps> & FieldComposition = ({ children }) => {
+export const Field: React.FC<FieldProps> & FieldComposition = ({
+  children,
+}) => {
   const id = useUniqueID();
-  return <FieldContext.Provider value={id}>
-    <div className='flex flex-col'>
-    {children}
-    </div>
-    </FieldContext.Provider>;
+  return (
+    <FieldContext.Provider value={id}>
+      <div className="flex flex-col">{children}</div>
+    </FieldContext.Provider>
+  );
 };
 
 Field.Label = Label;
