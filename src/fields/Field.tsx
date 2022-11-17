@@ -20,7 +20,7 @@ export interface FieldProps extends React.FC {
 export const Field: React.FC<FieldProps> & FieldComposition = ({ children }) => {
   const id = useUniqueID();
   return <FieldContext.Provider value={id}>
-    <div className='flex gap-3'>
+    <div className='flex flex-col'>
     {children}
     </div>
     </FieldContext.Provider>;
