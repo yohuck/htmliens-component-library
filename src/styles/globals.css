@@ -69,7 +69,7 @@ body {
 
 
 ::file-selector-button {
-  color: black;
+  color: rgb(15 23 42);
   background-color: rgb(234 179 8);
   padding: 0.5rem 1rem;
   border: 2px solid rgb(234 179 8);
@@ -78,7 +78,7 @@ body {
 }
 
 ::file-selector-button:hover {
-  background-color: black;
+  background-color: rgb(15 23 42);
   border: 2px solid rgb(234 179 8);
   color: rgb(234 179 8);
 }
