@@ -66,3 +66,19 @@ body {
   outline: 4px solid green;
   outline-offset: 4px;
 } */
+
+
+::file-selector-button {
+  color: black;
+  background-color: rgb(234 179 8);
+  padding: 0.5rem 1rem;
+  border: 2px solid rgb(234 179 8);
+  font-weight: 600;
+  margin-right: 2rem;
+}
+
+::file-selector-button:hover {
+  background-color: black;
+  border: 2px solid rgb(234 179 8);
+  color: rgb(234 179 8);
+}
