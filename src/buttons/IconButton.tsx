@@ -1,17 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAtom, faCoffee, faPizzaSlice, faSatellite, faSatelliteDish, faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
+import { faFloppyDisk, faPencil, faTrash, faLeftLong, faRightLong, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
 type Size = 'small' | 'medium' | 'large' | undefined;
 type Variant = 'primary' | 'secondary' | 'danger' | 'outline' | undefined;
+type Icon = 'edit' | 'save' | 'delete' | 'back' | 'forward' | undefined;
 
 export interface IconButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   children?: React.ReactNode;
   variant?: Variant;
+  icon?: Icon;
   size?: Size;
   isFullWidth?: boolean;
 }
+
+const iconSwitch = (icon: Icon): IconDefinition => {
+    switch (icon) {
+        case 'edit':
+            return faPencil;
+            break;
+        case 'save':
+            return faFloppyDisk;
+            break;
+        case 'delete':
+            return faTrash;
+            break;
+        case 'back':
+            return faLeftLong;
+            break;
+        case 'forward':
+            return faRightLong;
+            break;
+        default:
+            return faTrash;
+            break;
+    }
+};
 
 const themeSwitch = (variant: Variant): string => {
   switch (variant) {
@@ -36,13 +61,13 @@ const themeSwitch = (variant: Variant): string => {
 const sizeSwitch = (size: Size): string => {
   switch (size) {
     case 'small':
-      return 'text-sm rounded-md p-2 px-3';
+      return 'text-md rounded-md p-1 px-3';
       break;
     case 'medium':
-      return 'text-2xl rounded-lg p-3 px-4';
+      return 'text-3xl rounded-lg p-3 px-4';
       break;
     case 'large':
-      return 'text-4xl rounded-lg p-4';
+      return 'text-4xl rounded-lg p-4 px-5';
       break;
     default:
       return '';
@@ -51,7 +76,7 @@ const sizeSwitch = (size: Size): string => {
 };
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({  variant, size, isFullWidth, ...props }, ref) => {
+  ({  variant, size, isFullWidth, icon, ...props }, ref) => {
     return (
       <button
         ref={ref}
@@ -62,7 +87,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         )} ${sizeSwitch(size)} ${isFullWidth && 'w-full'}
         `}
       >
-        <FontAwesomeIcon icon={faUserAstronaut} />
+        <FontAwesomeIcon icon={iconSwitch(icon)} />
       </button>
     );
   }
@@ -79,5 +104,6 @@ IconButton.displayName = 'IconButton';
 IconButton.propTypes = {
   variant: PropTypes.oneOf(['primary', 'secondary', 'danger']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  icon: PropTypes.oneOf(['edit', 'save', 'delete', 'back', 'forward',]),
   isFullWidth: PropTypes.bool,
 };
