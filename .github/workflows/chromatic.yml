@@ -15,12 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install dependencies
-      - with:
-          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-      - run: npm run chromatic --project-token="$projectToken"
+        run: npm install
         # 👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         # Chromatic GitHub Action options
-        
+        with:
+          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
