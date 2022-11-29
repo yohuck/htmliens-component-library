@@ -6,17 +6,25 @@ export default {
   title: 'Example/Input',
   component: Field.Input,
   subcomponents: { Field, label: Field.Label },
+  argTypes: {
+    config: {
+      control: {
+        type: 'select',
+        options: ['email', 'text', 'password', 'number'],
+      },
+    },
+  },
 } as Meta;
 
-export const Default: Story = ({ placeholder }) => {
-  return (
-    <Field>
-      <Field.Label>Email Address:</Field.Label>
-      <Field.Input placeholder={placeholder} />
-    </Field>
-  );
+const Template: Story = (args) => {
+  return <Field>
+    <Field.Label>{args.config}</Field.Label>
+    <Field.Input placeholder="Custom Input" {...args} />
+  </Field>;
 };
 
-Default.args = {
-  placeholder: 'Placeholder content',
-};
+export const Default = Template.bind({});
+
+// Default.args = {
+//   config: 'email',
+// };
