@@ -48,7 +48,7 @@ body {
   text-outline: red 2px solid;
 }
 
-.success::after {
+ .success::after {
   content: '✔';
   color: green;
   font-size: 1.5rem;
@@ -60,7 +60,7 @@ body {
   color: red;
   font-size: 1.5rem;
   margin-left: 0.5rem;
-}
+} 
 /* 
 .success-input{
   outline: 4px solid green;
