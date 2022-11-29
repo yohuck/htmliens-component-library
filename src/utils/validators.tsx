@@ -4,7 +4,7 @@ import { inputOptions } from '../fields/Input';
 
 export const ValidatorFn = (
   e: FocusEvent<HTMLInputElement>,
-  config?: inputOptions
+  config: inputOptions
 ): void => {
   const textValidator = z.string().min(1);
   const emailValidator = z.string().email();

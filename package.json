@@ -9,7 +9,8 @@
     "build-storybook": "build-storybook",
     "format": "prettier --write \"src/**/*\"",
     "lint:format": "prettier --check \"src/**/*\"",
-    "lint": "eslint src/**"
+    "lint": "eslint src/**",
+    "chromatic": "npx chromatic --exit-zero-on-changes"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.11.4",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -64,5 +66,7 @@
     "nanoid": "^3.3.4",
     "prop-types": "^15.8.1",
     "zod": "^3.19.1"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@yohuck/htmliens-component-library@0.0.0"
 }
