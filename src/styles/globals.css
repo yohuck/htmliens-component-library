@@ -8,6 +8,7 @@
   --shadow: 0.15em 0.2em;
   --primary: rgb(15 23 42);
   --secondary: rgb(255 255 255);
+  --accent: rgb(234 179 8);
   --font-primary: 'Inter Tight', monospace;
   
 }
@@ -48,19 +49,19 @@ body {
   text-outline: red 2px solid;
 }
 
- .success::after {
+  .success::after {
   content: '✔';
   color: green;
   font-size: 1.5rem;
   margin-left: 0.5rem;
-}
+} 
 
 .failure::after {
   content: '✖';
   color: red;
   font-size: 1.5rem;
   margin-left: 0.5rem;
-} 
+}  */
 /* 
 .success-input{
   outline: 4px solid green;
@@ -86,4 +87,71 @@ body {
 .error-input {
   outline: 4px solid red;
   outline-offset: 4px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+}
+
+input[type="range"]{
+  background: var(--primary);
+  width: 100%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: var(--accent);
+  height: 0.3rem;
+  width: 100%;
+  margin: 1rem 1rem;
+  border-radius: 0.1rem;
+}
+
+input[type="range"]::-moz-range-track {
+  background-color: var(--accent);
+  height: 0.3rem;
+  width: 100%;
+  margin: 1rem 1rem;
+  border-radius: 0.1rem;
+  border: 5px solid black;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -13px; /* Centers thumb on the track */
+  background-color: var(--primary);
+  border: 4px solid var(--accent);
+  border-radius: 0.1rem;
+  height: 2rem;
+  width: 1rem;    
+}
+
+input[type="range"]::-moz-range-thumb {
+  background-color: var(--primary);
+  border: 4px solid var(--accent);
+  border-radius: 0.1rem;
+  height: 2rem;
+  width: 1rem;   
+}
+
+/* input[type="range"]:focus {
+  outline: none;
+} */
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 3px solid var(--accent);
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/******** Firefox ********/
+input[type="range"]:focus::-moz-range-thumb {
+  border: 1px solid #053a5f;
+  outline: 3px solid #053a5f;
+  outline-offset: 0.125rem;     
 }
