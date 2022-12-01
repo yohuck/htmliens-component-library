@@ -49,7 +49,7 @@ export const ValidatorFn = (
       e.target.classList.add(
         'dark:border-red-500',
         'dark:text-red-500',
-        'failure'
+        // 'failure'
       );
       e.target.labels?.[0].firstChild?.after(` ${errorText}`);
       e.target.labels?.[0].classList.add('dark:text-red-500');
